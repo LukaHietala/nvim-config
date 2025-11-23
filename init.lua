@@ -14,6 +14,22 @@ vim.opt.signcolumn = "yes"
 -- remaps
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
-vim.pack.del({"instant.nvim"})
--- instant nvim
-vim.g.instant_username = "lhietala"
+vim.pack.add({
+    { src = "https://github.com/ellisonleao/gruvbox.nvim" }
+})
+
+-- gruvbox
+vim.o.background = "dark"
+vim.cmd([[colorscheme gruvbox]])
+
+require("gruvbox").setup({
+  bold = false,
+  italic = {
+    strings = false,
+    emphasis = false,
+    comments = false,
+    operators = false,
+    folds = false,
+  },
+  contrast = "hard",
+})
